@@ -17,19 +17,7 @@ import jax.numpy as jnp
 
 
 def generate_ising_params(d, sigma_h=0.1, sigma_J=0.1, seed=0):
-    """
-    generate field h and interaction matrix j
 
-    args:
-        d: number of spins
-        sigma_h: stddev of field
-        sigma_j: scale of negative interaction
-        seed: rng seed
-
-    returns:
-        h: vector of shape (d,)
-        j: symmetric matrix (d, d), with zero diagonal
-    """
     key = jax.random.PRNGKey(seed)
     key_h, key_J = jax.random.split(key)
 
